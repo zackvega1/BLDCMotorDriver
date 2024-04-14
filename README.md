@@ -1,6 +1,6 @@
 # BLDCMotorDriver
-
-# How to install necessary USB driver to flash firmware to Pi Pico
+This project heavily references the code seen in the [simpleFOC repository](https://github.com/simplefoc), but is modified to run on the [Raspberry Pi Pico](https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf) using [PlatformIO](https://platformio.org/).
+## IMPORTANT: USB driver to flash PlatformIO firmware to Pi Pico
 If you don't do the following steps on your Pi Pico you'll likely encounter [this error](https://community.platformio.org/t/upload-error-1-on-pio-with-raspberry-pi-pico/36841).
 
 1. Download the [Zadig USB driver installer](https://zadig.akeo.ie/)
