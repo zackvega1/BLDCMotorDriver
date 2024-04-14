@@ -1,5 +1,10 @@
 # BLDCMotorDriver
 This project heavily references the code seen in the [simpleFOC repository](https://github.com/simplefoc), but is modified to run on the [Raspberry Pi Pico](https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf) using [PlatformIO](https://platformio.org/).
+
+## Prototype BLDC Driver Board
+Reference this link for the prototypical BLDC driver board developing during ROB 310 Winter 2024:
+[BLDC Motor Driver Board](https://u.easyeda.com/account/user/projects/index/detail?project=8bae73a7920e45f9aaeda30bf190f509&listType=all)
+
 ## IMPORTANT: USB driver to flash PlatformIO firmware to Pi Pico
 If you don't do the following steps on your Pi Pico you'll likely encounter [this error](https://community.platformio.org/t/upload-error-1-on-pio-with-raspberry-pi-pico/36841).
 
