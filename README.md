@@ -21,4 +21,59 @@ Once you have installed the USB driver of your choice on the Pico, perform the f
 3. Manually drag `.pio/build/pico/firmware.uf2` to the mounted Pico drive
 
 ## PlatformIO Setup
-Perform the following steps to get PlatformIO up and running, so you can start building code and flashing it to the Pico
+
+PlatformIO is the platform used to compile and build for the Raspberry Pi Pico. Follow the instructions below to install PlatformIO:
+
+1. **Download [VSCode](https://code.visualstudio.com/download).**
+
+2. **Open the Extension Manager:**
+   
+   ![Extension Manager](https://github.com/zackvega1/BLDCMotorDriver/assets/98603447/c0954756-525f-4f14-bcf0-7755ecf2ab5f)
+
+4. **Search for PlatformIO and install it:**
+   
+   ![Search for PlatformIO](https://github.com/zackvega1/BLDCMotorDriver/assets/98603447/32f7f32e-b68f-45a6-b3c8-3ce3731a133d)
+   *Note: If you have not previously installed it, you'll see an "Install" button.*
+
+5. **Restart VSCode.**
+   Once restarted, you should see the PlatformIO icon on the left taskbar:
+
+   ![PlatformIO Icon](https://github.com/zackvega1/BLDCMotorDriver/assets/98603447/b7f89b3e-3946-4a94-a979-ec8b93917aab)
+
+6. **Confirmation:**
+   If you see this icon, PlatformIO is successfully installed.
+
+7. **For more information about PlatformIO, refer to the [documentation](https://platformio.org/).**
+
+## Running the Code
+
+1. **Clone or download the repository.**
+
+2. **Open VSCode and click on the PlatformIO Icon.**
+
+   ![PlatformIO Icon](https://github.com/zackvega1/BLDCMotorDriver/assets/98603447/b7f89b3e-3946-4a94-a979-ec8b93917aab)
+
+4. **Your screen should look like this:**
+
+   ![PlatformIO Screen](https://github.com/zackvega1/BLDCMotorDriver/assets/98603447/b1bb9a22-d8a3-49f6-9a26-d2f568d52e41)
+
+6. **Click on "Open Project".**
+   
+   ![Open Project](https://github.com/zackvega1/BLDCMotorDriver/assets/98603447/651eeb70-93d0-4f80-a398-4125c55c5cbc)
+
+8. **Locate the directory where you saved your repository and click "Open".**
+   *Note: Make sure to open the folder titled "BLDC".*
+
+9. **PlatformIO will begin installing all necessary dependencies. This may take some time.**
+
+10.**Once PlatformIO finishes installing everything click the build button in project tasks, this will compile the code. This will take a very long time on your first compile and be faster after that.**
+
+![image](https://github.com/zackvega1/BLDCMotorDriver/assets/98603447/972cdf59-b17f-4e3f-9e0e-25a76ede6f96)
+
+### Place the Pico in BOOTSEL Mode by unplugging it, holding down the BOOTSEL button, then plugging it back in. You should see a mounted drive appear on your computer. 
+
+11. **Go to the directory of repository. In the pico/build folder you should see a firmware.uft file once PlatformIO has finished buliding your code. Drag this to the pico**
+12. **The Pico should then eject and your code will have been uploaded to the pico**
+
+
+
