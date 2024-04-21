@@ -21,7 +21,9 @@ BLDCMotor motor = BLDCMotor(11, 9.75);
 
 // commander interface
 Commander command = Commander(Serial);
+void onTarget(char* cmd){ command.target(&motor,cmd); }
 void onMotor(char* cmd){ command.motor(&motor, cmd); }
+void onMotion(char* cmd){ command.motion(&motor,cmd); }
 
 void setup() {
   spi2.begin();
@@ -39,27 +41,26 @@ void setup() {
   motor.linkDriver(&driver);
 
   // set control loop type to be used
-  motor.controller = MotionControlType::torque;
+  motor.controller = MotionControlType::angle;
 
   // contoller configuration based on the control type 
-  motor.PID_velocity.P = 0.2;
-  motor.PID_velocity.I = 20;
-  motor.PID_velocity.D = 0;
+  motor.PID_velocity.P = .125;
+  motor.PID_velocity.I = 7;
+  // motor.PID_velocity.D = 0.001;
   // default voltage_power_supply
-  motor.voltage_limit = 12;
+  motor.voltage_limit = 10;
+  motor.PID_velocity.output_ramp = 1000;
+
 
   // velocity low pass filtering time constant
-  motor.LPF_velocity.Tf = 0.01;
+  motor.LPF_velocity.Tf = 0.045;
 
   // angle loop controller
-  motor.P_angle.P = 20;
-  // angle loop velocity limit
+  motor.P_angle.P = 8.0;
   motor.velocity_limit = 50;
-
-  // use monitoring with serial for motor init
-  // monitoring port
+  motor.current_limit = .3;
+  
   Serial.begin(115200);
-  // comment out if not needed
   motor.useMonitoring(Serial);
 
   // initialise motor
@@ -68,27 +69,35 @@ void setup() {
   motor.initFOC();
 
   // set the inital target value
-  motor.target = 2;
+  motor.target = M_PI/4;
 
   // define the motor id
   command.add('A', onMotor, "motor");
-
+  command.add('M',onMotion,"motion control");
+  
   // Run user commands to configure and the motor (find the full command list in docs.simplefoc.com)
   Serial.println(F("Motor commands sketch | Initial motion control > torque/voltage : target 2V."));
-  
+  motor.monitor_variables = _MON_TARGET | _MON_VEL | _MON_ANGLE ; 
+  motor.monitor_downsample = 100; 
   _delay(1000);
 }
 
 
-void loop() {
-  // iterative setting of the FOC phase voltage
-  motor.loopFOC();
+//float target_angle = sin(0);
+//long timestamp_us = _micros();
+//float target_velocity = 2; // 2Rad/s ~ 20rpm
+//float d_T = .00;
 
-  // iterative function setting the outter loop target
-  // velocity, position or voltage
-  // if target not set in parameter uses motor.target variable
-  motor.move();
+void loop() {
+
+  motor.loopFOC();
   
+  //motor.move(2*sin(d_T));
+  motor.move();
+
+
   // user communication
   command.run();
+  motor.monitor();
+  //d_T += .0001;
 }
