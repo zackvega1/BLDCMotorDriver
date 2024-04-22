@@ -76,4 +76,25 @@ PlatformIO is the platform used to compile and build for the Raspberry Pi Pico. 
 12. **The Pico should then eject and your code will have been uploaded to the pico**
 
 
+## Initial Testing Results:
+
+# Random Setpoint Position Control
+
+https://github.com/zackvega1/BLDCMotorDriver/assets/79417604/a46cdf18-8f71-4b4d-b843-c2d0ab8e5b1c
+
+# Sine Wave Trajectory
+
+https://github.com/zackvega1/BLDCMotorDriver/assets/79417604/abbf2bf4-174d-46f4-b3fa-4214b0e3bb09
+
+# Compliant Operation (Torque Limited)
+
+https://github.com/zackvega1/BLDCMotorDriver/assets/79417604/30a29a10-5d14-485c-8b83-cfc31a08579d
+
+
+
+
+
+
+
+
 
