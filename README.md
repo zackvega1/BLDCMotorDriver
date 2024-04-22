@@ -4,11 +4,17 @@ This project heavily references the code seen in the [simpleFOC repository](http
 ## Prototype BLDC Driver Board
 Reference this link for the prototypical BLDC driver board developing during ROB 310 Winter 2024:
 [BLDC Motor Driver Board](https://u.easyeda.com/account/user/projects/index/detail?project=8bae73a7920e45f9aaeda30bf190f509&listType=all)
-#Table of Contents
-1. [IMPORTANT: USB driver](#USB)
-2. [PlatformIO Setup](#PlatformIO)
-3. [Results](#Results)
-## IMPORTANT: USB driver to flash PlatformIO firmware to Pi Pico <a name="USB"></a>
+
+Table of contents
+=================
+<!--ts-->
+
+   * [IMPORTANT: USB driver](#important-usb-driver-to-flash-platformio-firmware-to-pi-pico)
+   * [PlatformIO Setup](#platformio-setup)
+   * [Results](#initial-testing-results)
+<!--te-->
+
+## IMPORTANT USB driver to flash PlatformIO firmware to Pi Pico 
 If you don't do the following steps on your Pi Pico you'll likely encounter [this error](https://community.platformio.org/t/upload-error-1-on-pio-with-raspberry-pi-pico/36841).
 
 1. Download the [Zadig USB driver installer](https://zadig.akeo.ie/)
@@ -23,7 +29,7 @@ Once you have installed the USB driver of your choice on the Pico, perform the f
 2. Hold BOOTSEL on your Pico and power cycle
 3. Manually drag `.pio/build/pico/firmware.uf2` to the mounted Pico drive
 
-## PlatformIO Setup <a name="PlatformIO"></a>
+## PlatformIO Setup 
 
 PlatformIO is the platform used to compile and build for the Raspberry Pi Pico. Follow the instructions below to install PlatformIO:
 
@@ -79,7 +85,7 @@ PlatformIO is the platform used to compile and build for the Raspberry Pi Pico. 
 12. **The Pico should then eject and your code will have been uploaded to the pico**
 
 
-## Initial Testing Results: <a name="Results"></a>
+## Initial Testing Results
 
 # Random Setpoint Position Control
 
