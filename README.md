@@ -100,6 +100,21 @@ https://github.com/zackvega1/BLDCMotorDriver/assets/79417604/abbf2bf4-174d-46f4-
 https://github.com/zackvega1/BLDCMotorDriver/assets/79417604/30a29a10-5d14-485c-8b83-cfc31a08579d
 
 
+## Single Motor Motor Driver Board
+
+Schematic: 
+![SCH_SingleMotor_2024-06-26](https://github.com/zackvega1/BLDCMotorDriver/assets/79417604/eba3f2ac-ba33-423b-bc6f-bfd3c3771662)
+
+Top Layer View:
+
+![3D_SingleMotor_2024-06-26](https://github.com/zackvega1/BLDCMotorDriver/assets/79417604/6d8053f8-35c2-4308-96ee-8d7cb6f370cd)
+
+Contact `zvega` or `celwell20` for EasyEDA link
+
+
+
+
+
 
 
 
